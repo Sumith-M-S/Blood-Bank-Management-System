@@ -24,23 +24,27 @@ It allows donors to register, users to request blood, and admins to manage blood
 
 ## 📂 Project Structure
 
-├── admin/ # Admin panel
-├── css/ # Stylesheets
-├── image/ # Images used in UI
-├── sql/ # Database scripts
-├── about_us.php # About page
-├── conn.php # Database connection file
-├── contact_us.php # Contact page
-├── donate_blood.php # Blood donation form
-├── footer.php # Footer section
-├── head.php # Header section
-├── home.php # Homepage
-├── need_blood.php # Request for blood
-├── savedata.php # Save data to DB
-├── search_blood_group.php # Search donor by blood group
-├── slider.php # Image slider
-├── ticker.php # Scrolling ticker for updates
-├── why_donate_blood.php # Awareness page
+flowchart TD
+    A[Homepage] --> B[Donor Registration - donate_blood.php]
+    A --> C[Request Blood - need_blood.php]
+    A --> D[Search Blood Group - search_blood_group.php]
+    A --> E[Why Donate Blood - why_donate_blood.php]
+    A --> F[About Us - about_us.php]
+    A --> G[Contact Us - contact_us.php]
+
+    B --> H[Save Data - savedata.php]
+    C --> I[Database - blood requests]
+    D --> J[Database - donor records]
+
+    subgraph Admin Panel
+        K[Manage Donors]
+        L[Manage Requests]
+        M[View Inventory]
+    end
+
+    H --> Admin Panel
+    I --> Admin Panel
+    J --> Admin Panel
 
 
 ---
